@@ -186,6 +186,15 @@ export function SiteShell({
               openplist<span className="text-primary">.com</span>
             </p>
             <p className="mt-2 text-[13px] text-muted-foreground">{t.footer_privacy()}</p>
+            <p className="mt-2 text-[13px] text-muted-foreground">
+              {t.footer_open_source()}{" "}
+              <a
+                className="rounded underline underline-offset-4 transition-colors hover:text-primary focus-visible:outline focus-visible:outline-ring"
+                href="https://github.com/chenz24/openplist"
+              >
+                GitHub
+              </a>
+            </p>
             <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground">
               <Link className="py-1 hover:text-primary" to={localizedPath("/about", locale)}>
                 {{ en: "About", zh: "关于", ja: "このサイトについて" }[locale]}

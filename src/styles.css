@@ -1,0 +1,158 @@
+@import "tailwindcss" source(none);
+@import "tw-animate-css";
+@import "@fontsource/ibm-plex-sans/latin-400.css";
+@import "@fontsource/ibm-plex-sans/latin-500.css";
+@import "@fontsource/ibm-plex-sans/latin-600.css";
+@import "@fontsource/ibm-plex-mono/latin-400.css";
+@import "@fontsource/ibm-plex-mono/latin-500.css";
+@import "@fontsource/ibm-plex-mono/latin-600.css";
+
+@source "../src";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * openplist.com design system — a compact, high-density developer tool.
+ * Dark slate surfaces, a single amber accent, IBM Plex type.
+ * All colors are oklch tokens; never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 3px);
+  --radius-md: calc(var(--radius) - 1px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-type-string: var(--type-string);
+  --color-type-number: var(--type-number);
+  --color-type-bool: var(--type-bool);
+  --color-type-container: var(--type-container);
+  --color-type-binary: var(--type-binary);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  color-scheme: dark;
+  --radius: 0.375rem;
+  --background: oklch(0.19 0.017 258);
+  --foreground: oklch(0.93 0.008 250);
+  --card: oklch(0.225 0.018 258);
+  --card-foreground: oklch(0.93 0.008 250);
+  --popover: oklch(0.235 0.018 258);
+  --popover-foreground: oklch(0.93 0.008 250);
+  --primary: oklch(0.79 0.15 76);
+  --primary-foreground: oklch(0.2 0.03 70);
+  --secondary: oklch(0.28 0.018 258);
+  --secondary-foreground: oklch(0.93 0.008 250);
+  --muted: oklch(0.27 0.016 258);
+  --muted-foreground: oklch(0.74 0.015 255);
+  --accent: oklch(0.31 0.02 258);
+  --accent-foreground: oklch(0.95 0.008 250);
+  --destructive: oklch(0.63 0.2 25);
+  --destructive-foreground: oklch(0.97 0.01 250);
+  --border: oklch(0.31 0.017 258);
+  --input: oklch(0.31 0.017 258);
+  --ring: oklch(0.79 0.15 76);
+  --surface: oklch(0.215 0.017 258);
+  --surface-raised: oklch(0.26 0.018 258);
+  --type-string: oklch(0.8 0.12 150);
+  --type-number: oklch(0.8 0.12 240);
+  --type-bool: oklch(0.8 0.14 330);
+  --type-container: oklch(0.72 0.02 258);
+  --type-binary: oklch(0.8 0.13 55);
+  --chart-1: oklch(0.79 0.15 76);
+  --chart-2: oklch(0.8 0.12 150);
+  --chart-3: oklch(0.8 0.12 240);
+  --chart-4: oklch(0.8 0.14 330);
+  --chart-5: oklch(0.8 0.13 55);
+  --sidebar: oklch(0.215 0.017 258);
+  --sidebar-foreground: oklch(0.93 0.008 250);
+  --sidebar-primary: oklch(0.79 0.15 76);
+  --sidebar-primary-foreground: oklch(0.2 0.03 70);
+  --sidebar-accent: oklch(0.28 0.018 258);
+  --sidebar-accent-foreground: oklch(0.95 0.008 250);
+  --sidebar-border: oklch(0.31 0.017 258);
+  --sidebar-ring: oklch(0.79 0.15 76);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :where(button, a, input, select, textarea):focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+  }
+
+  :where(button, a, input, select, textarea) {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklch, var(--color-primary) 35%, transparent);
+  }
+}
+
+@utility grid-bg {
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in oklch, var(--color-border) 55%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklch, var(--color-border) 55%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 40px 40px;
+}
+
+@layer components {
+  .editor-action {
+    @apply inline-flex min-h-9 items-center justify-center gap-1.5 rounded-md border border-border px-2.5 py-1.5 text-[13px] text-foreground transition-colors hover:bg-accent disabled:cursor-not-allowed disabled:opacity-40;
+  }
+}

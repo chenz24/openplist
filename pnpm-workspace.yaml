@@ -1,0 +1,16 @@
+packages:
+  - '.'
+
+# Keep peer resolution reproducible between local installs and CI.
+autoInstallPeers: false
+
+# Keep the previous 24-hour release delay (pnpm uses minutes).
+minimumReleaseAge: 1440
+
+overrides:
+  rolldown: 1.2.1
+
+# Native build tooling; all other dependency install scripts stay disabled.
+onlyBuiltDependencies:
+  - esbuild
+  - '@tailwindcss/oxide'

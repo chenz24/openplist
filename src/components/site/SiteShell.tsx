@@ -90,7 +90,7 @@ export function SiteShell({
           >
             openplist<span className="text-primary">.com</span>
           </Link>
-          <nav ref={navigation} className="hidden items-center gap-1 lg:flex">
+          <nav ref={navigation} className="hidden items-center gap-1 lg:ml-auto lg:flex">
             {TOOLS.slice(0, 2).map((t) => (
               <Link
                 key={t.to}
